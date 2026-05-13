@@ -1,0 +1,21 @@
+name: Request sync to hiroya-uga.github.io
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send sync request to hiroya-uga.github.io
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.MAIN_REPO_PAT }}
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: 'hiroya-uga',
+              repo: 'hiroya-uga.github.io',
+              event_type: 'sync-notes-submodule',
+            });
