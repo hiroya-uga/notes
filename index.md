@@ -5,8 +5,23 @@ publishedAt: '2026-05-06T16:33:29+09:00'
 updatedAt: '2026-05-25T22:38:22+09:00'
 ---
 
-一般的なWikiとは異なり、閲覧専用であり、ユーザーによる編集は行えません。コンテンツはサイト所有者のみが更新します。
+```js:オキナ（U+02BB）とシングルクオートの表記揺れ
+const inputs = [
+  "Wiki'oleWeb",   // U+0027 APOSTROPHE
+  "Wiki'oleWeb",   // U+2018 LEFT SINGLE QUOTATION MARK
+  "Wiki'oleWeb",   // U+2019 RIGHT SINGLE QUOTATION MARK
+  "WikiʼoleWeb",   // U+02BC MODIFIER LETTER APOSTROPHE
+  "Wiki`oleWeb",   // U+0060 GRAVE ACCENT
+  "Wiki´oleWeb",   // U+00B4 ACUTE ACCENT
+  "Wiki′oleWeb",   // U+2032 PRIME
+  "WikiʻoleWeb",   // U+02BB MODIFIER LETTER TURNED COMMA (ʻokina)
+];
 
-- 見た目を優先している箇所が一部存在します。
-- 内容の正確性・網羅性は保証されません。
+const result = inputs.filter(item => item.includes("\u02BB"));
+
+console.log(result); // > ["WikiʻoleWeb"]
+```
+
+- 内容の正確性は保証されません。
 - サイト内検索はGoogle検索を利用しています。
+- サイト内ツールへのバナー画像は生成AIによって作成しています。
