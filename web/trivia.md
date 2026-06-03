@@ -1,8 +1,15 @@
 ---
-title: 'JavaScriptの小技・小ネタ'
-description: 'JavaScriptの覚えておくと便利なテクニックや、共有したい小ネタをまとめます。'
-publishedAt: '2026-06-01T05:49:04+09:00'
+title: '小技・小ネタ'
+description: 'HTML/CSS/JavaScriptやブラウザ周りの覚えておくと便利なテクニック、共有したい小ネタをまとめます。'
+publishedAt: '2026-06-03T20:53:40+09:00'
 ---
+
+## Webという言葉の表記
+
+本サイトでは「Web」という表記で統一しています。
+
+参考：「[Webという言葉の表記が揺れている](/articles/tech-blog/2026/06-01-web/)」
+
 
 ## JavaScriptは `[ ] ( ) ! +` の6つの記号だけでコードが書ける
 
