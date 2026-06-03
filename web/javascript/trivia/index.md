@@ -1,15 +1,8 @@
 ---
-title: 'Webフロントエンドの小技・小ネタ'
-description: 'HTML/CSS/JavaScript やブラウザ周りの覚えておくと便利なテクニックや、共有したい小ネタをまとめます。'
+title: 'JavaScriptの小技・小ネタ'
+description: 'JavaScriptの覚えておくと便利なテクニックや、共有したい小ネタをまとめます。'
 publishedAt: '2026-06-01T05:49:04+09:00'
 ---
-
-## Webという言葉の表記
-
-本サイトでは「Web」という表記で統一しています。
-
-参考：「[Webという言葉の表記が揺れている](/articles/tech-blog/2026/06-01-web/)」
-
 
 ## JavaScriptは `[ ] ( ) ! +` の6つの記号だけでコードが書ける
 

@@ -2,4 +2,5 @@
 title: 'ヘルプ'
 description: '当サイトの使い方や各機能について説明しています。'
 publishedAt: '2026-05-08T19:09:59+09:00'
+sortIndex: -1
 ---
