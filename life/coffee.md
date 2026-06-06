@@ -4,7 +4,7 @@ description: 'コーヒーの淹れ方や、好みの豆、使っている器具
 publishedAt: '2026-06-06T13:05:25+09:00'
 ---
 
-| 道具 | 用途・備考 |
+| 種別 | アイテム名 |
 | - | - |
 | ドリッパー | [KEYUCA paral コーヒードリッパー L ブラウン](https://www.keyuca.com/Form/Product/ProductDetail.aspx?pid=3300670)<br>[KEYUCA アネッロ珈琲ドリッパー](https://www.keyuca.com/Form/Product/ProductDetail.aspx?pid=3501115) |
 | ペーパー | [HARIO 台形 コーヒーフィルター PEF-02-40M-4S-AZ+](https://amzn.to/4vAW6zW) |
