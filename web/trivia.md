@@ -159,6 +159,59 @@ console.log(typeof document.all);                       // > "undefined"
 
 [^7]: [typeof - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#exceptional_behavior_of_document.all) - MDN Web Docs, Mozilla（英語、2026年6月3日閲覧）
 
+### `undefined`と`NaN`、`Infinity`はリテラルではない
+
+`true`や`null`などと異なり、`undefined`と`NaN`など一部の値は`window`に変数として用意されているだけ。
+
+```js
+console.log('undefined' in window, window.undefined); // > true, undefined
+console.log('NaN' in window, window.NaN);             // > true, NaN
+console.log('Infinity' in window, window.Infinity);   // > true, Infinity
+
+console.log('null' in window, window.null);           // > false, undefined
+console.log('true' in window, window.true);           // > false, undefined
+```
+
+かつて変数`undefined`は上書き可能だったため、`undefined`との比較は`typeof`を使うか、`undefined`を返す`void 0`と比較していました。
+
+```js:hogeがundefinedであるかどうかを検証する例
+if (typeof hoge === 'undefined') {}
+if (hoge === void 0) {}
+```
+
+ローカルスコープでは、現代でも変数名として宣言できるので、ES3時代の雰囲気を味わうことができます。
+
+```js:undefinedがundefinedではなくなる例
+((undefined, NaN, Infinity) => {
+  console.log(undefined, NaN, Infinity); // > 0, 1, 2
+})(0, 1, 2);
+```
+
+```js:nullやtrueは予約語なのでSyntaxErrorになる
+const undefined = true; // OK
+const null = true;      // SyntaxError
+const true = false;     // SyntaxError
+```
+
+### `id`属性をもつHTML要素はグローバル変数に公開される
+
+とくに活用するタイミングはないですが、`id`属性を持つ要素が読み込まれるとグローバル変数として公開されます。たとえばスクリプト実行時点でDOMに`div#hoge`が存在すると、`window.hoge`は`HTMLDivElement`を返します。
+
+```html
+<script>
+console.log(window.hoge);          // > undefined
+console.log(window['my-element']); // > undefined
+</script>
+
+<div id="hoge"></div>
+<div id="my-element"></div>
+
+<script>
+console.log(hoge);                  // > HTMLDivElement
+console.log(window['my-element']);  // > HTMLDivElement
+</script>
+```
+
 ### 動画を2倍速以上で再生する裏技
 
 倍速設定のUIがなくても早くできる。
